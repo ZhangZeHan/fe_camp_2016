@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>PictureSwitch</title>
+    <link rel="stylesheet" href="01.css">
+    <style>
+        .img-box{
+            width: 100%;
+            height: 100%;
+            background-size:cover;
+            z-index:-1;
+            margin:0;
+            top:0;
+            bottom: 0;
+            position: absolute;
+        }
+        .img-box img{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+        }
+        .btn-box{
+            width: 300px;
+            height: 50px;
+            margin:250px 1000px;
+        }
+        .btn-box button{
+            width: 300px;
+            height: 50px;
+            border: 1px solid #89cbdb;
+            background-color: #eee;
+            border-radius: 5px;
+            font-size: 30px;
+            font-family: 华文隶书;
+            margin: 30px;
+            color: #f90133;;
+            outline: none;
+        }
+        .btn-box button:hover{
+            background-color: #ddd;
+            color: #3070e0;
+        }
+    </style>
+</head>
+<body>
+<div class="img-box">
+    <img id="img01" src="images/xx01.png">
+    <!--<img id="img02" src="images/bw01.png">-->
+</div>
+<div class="btn-box">
+    <button id="blue" style="background: url(images/blue.png)">小新</button>
+   <button id="gray" style="background:url(images/gray.png)">巴卫</button>
+</div>
+
+<!--最直接的方法-->
+<script>
+    var btn1=document.getElementById("blue");
+    var btn2=document.getElementById("gray");
+    var img01=document.getElementById("img01");
+    <!--var img02=document.getElementById("img02");-->
+
+    btn1.onclick=function(){
+        img01.setAttribute("src","images/xx01.png");
+        btn1.setAttribute("style","background:url(images/blue.png)");
+        btn2.setAttribute("style","background:url(images/gray.png)");
+
+    }
+    btn2.onclick=function(){
+        img01.setAttribute("src","images/bw01.png");
+        btn1.setAttribute("style","background:url(images/gray.png)");
+        btn2.setAttribute("style","background:url(images/blue.png)");
+    }
+</script>-->
+
+<!--自定义函数，id与图片命名一样（若不一样需要加判断）-->
+<!--<script>
+    <!--var btn1=document.getElementById("GN");-->
+    <!--var btn2=document.getElementById("SSM");-->
+    <!--var btn3=document.getElementById("ZL");-->
+    <!--var img=document.getElementById("img");-->
+
+    <!--function SwitchPicture(id){-->
+        <!--img.setAttribute("src","images/"+id+".png");-->
+    <!--}-->
+
+    <!--btn1.onclick=function(){-->
+        <!--SwitchPicture("GN");-->
+    <!--}-->
+    <!--btn2.onclick=function(){-->
+        <!--SwitchPicture("SSM");-->
+    <!--}-->
+    <!--btn3.onclick=function(){-->
+        <!--SwitchPicture("ZL");-->
+    <!--}-->
+<!--</script>-->
+
+<!--获取按钮组-->
+<!--<script>-->
+    <!--var btns=document.getElementsByTagName("button");-->
+    <!--var img=document.getElementById("img");-->
+
+    <!--function SwitchPicture(id){-->
+        <!--img.setAttribute("src","images/"+id+".png");-->
+    <!--}-->
+
+    <!--btns[0].onclick=function(){-->
+    <!--SwitchPicture("GN");-->
+    <!--}-->
+    <!--btns[1].onclick=function(){-->
+    <!--SwitchPicture("SSM");-->
+    <!--}-->
+    <!--btns[2].onclick=function(){-->
+    <!--SwitchPicture("ZL");-->
+    <!--}-->
+<!--</script>-->
+
+<!--利用for循环定义事件，注意this的使用-->
+<!--<script>-->
+    <!--var btns=document.getElementsByTagName("button");-->
+    <!--var img=document.getElementById("img");-->
+
+    <!--function SwitchPicture(id){-->
+        <!--img.setAttribute("src","images/"+id+".png");-->
+    <!--}-->
+
+    <!--for(var i=0;i<btns.length;i++){-->
+        <!--btns[i].onclick=function(){-->
+            <!--var id=this.id;-->
+            <!--SwitchPicture(id);-->
+        <!--}-->
+    <!--}-->
+<!--</script>-->
+</body>
+</html>
